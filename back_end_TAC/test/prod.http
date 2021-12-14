@@ -1,0 +1,30 @@
+@url=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTUxNTQ1OSwiZXhwIjoxNjM5NjAxODU5fQ.Cvo6RpYUyHkz6dy1tFAD3CgVWmtDbMLSsFI7Hysr2Bc
+
+@token_user=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJyaWNhQGdtYWlsLmNvbSIsInVzZXJUeXBlIjoiTm9ybWFsIiwiaWF0IjoxNjM5NDg3NjM1LCJleHAiOjE2Mzk1NzQwMzV9.cIbmljXrGPsvzVoQCcfSQ_Nh9iDMvvtTvtJrqL0t9pc
+
+### Create product
+POST {{url}}/products
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "name": "Produto mt top",
+    "price": 9999.99,
+    "quantity": 10,
+    "description": "Produto muito top, compre agora!",
+    "category": "Produto Top",
+    "image": "https://produto.top/wp-content/uploads/2021/04/Produto.top-logo3.png"
+}
+
+### Get all products
+GET {{url}}/products
+Authorization: {{token}}
+
+### Get product by ID
+GET {{url}}/products/2
+Authorization: {{token}}
+
+### Delete product (by Id)
+DELETE {{url}}/products/7
+Authorization: {{token}}

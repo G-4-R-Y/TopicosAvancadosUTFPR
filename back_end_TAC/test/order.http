@@ -1,0 +1,28 @@
+@url=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTUxNTQ1OSwiZXhwIjoxNjM5NjAxODU5fQ.Cvo6RpYUyHkz6dy1tFAD3CgVWmtDbMLSsFI7Hysr2Bc
+@token_user=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJyaWNhQGdtYWlsLmNvbSIsInVzZXJUeXBlIjoiTm9ybWFsIiwiaWF0IjoxNjM5NDg3NjM1LCJleHAiOjE2Mzk1NzQwMzV9.cIbmljXrGPsvzVoQCcfSQ_Nh9iDMvvtTvtJrqL0t9pc
+
+### Create order
+POST {{url}}/orders
+Content-Type: application/json
+Authorization: {{token_user}}
+
+{
+    "products":
+    [
+        {"id": 5, "quantity": 2},
+        {"id": 9, "quantity": 1}
+    ]
+}
+
+### Get all orders
+GET {{url}}/orders
+Authorization: {{token}}
+
+### Get order by ID
+GET {{url}}/orders/3
+Authorization: {{token}}
+
+### Delete order (by Id)
+DELETE {{url}}/orders/3
+Authorization: {{token}}

@@ -1,0 +1,27 @@
+@url=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTUwODk4NCwiZXhwIjoxNjM5NTk1Mzg0fQ.Sdy2iKpnsFqxumgixJ0MEZTJhAn_yjlprRfLjOfOCXI
+
+### Create user
+POST {{url}}/users
+Content-Type: application/json
+
+{
+    "name": "Admin",
+    "email": "adminrica@gmail.com",
+    "password": "1234",
+    "userType": "Admin"
+}
+
+//"userType": "Admin"
+
+### Get all users
+GET {{url}}/users
+Authorization: {{token}}
+
+### Get by ID
+GET {{url}}/users/2
+Authorization: {{token}}
+
+### Delete user (by Id)
+DELETE {{url}}/users/3
+Authorization: {{token}}

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "lfghgrmj",
+    "password": "DNXwzzCeal9sTfTxW4TIirY6H_M5LD2o",
+    "database": "lfghgrmj",
+    "host": "kesavan.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "lfghgrmj",
+    "password": "DNXwzzCeal9sTfTxW4TIirY6H_M5LD2o",
+    "database": "lfghgrmj",
+    "host": "kesavan.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "lfghgrmj",
+    "password": "DNXwzzCeal9sTfTxW4TIirY6H_M5LD2o",
+    "database": "lfghgrmj",
+    "host": "kesavan.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}
