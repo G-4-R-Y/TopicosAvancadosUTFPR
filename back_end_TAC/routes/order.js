@@ -1,10 +1,9 @@
 var express = require('express');
 const cors = require('cors');
 var router = express.Router();
-const corsAllow = require('../middlewares/corsAllow');
 const { Order, Prod, ProdOrder } = require('../database/models');
 //const order = require('../database/models/order');
-
+const corsAllow = require('../middlewares/corsAllow');
 const isAuthorized = require('../middlewares/isAuthorized')
 
 /* GET order listing. */
@@ -12,11 +11,18 @@ router.get('/', corsAllow, isAuthorized, async function(req, res, next) {
     res.json(await Order.findAll());
 });
 
-/* GET all user orders */
-router.get("/:id/products", corsAllow, isAuthorized, async (req, res) => {
+/* GET all user orders from user ID */
+router.get("/user/:id", corsAllow, isAuthorized, async (req, res) => {
   const { id } = req.params;
-  const { userId } = req.user;
-  const { Order } = await Order.findAll({where: userId == Order.userId});
+  const order = await Order.findAll({where: {userId: id}});
+  return res.json(order)
+});
+
+/* GET all products from order ID */
+router.get("/productslist/:id", corsAllow, isAuthorized, async (req, res) => {
+  const { id } = req.params;
+  const orderProducts = await ProdOrder.findAll({where: {order_id: id}});
+  return res.json(orderProducts)
 });
 
 //Get order by ID

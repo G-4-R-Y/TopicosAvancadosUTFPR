@@ -1,0 +1,14 @@
+{
+  "name": "rating_api",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "jsonwebtoken": "^8.5.1",
+    "meteor-node-stubs": "^1.1.0",
+    "mongoose": "^6.1.2",
+    "simpl-schema": "^1.12.0"
+  }
+}

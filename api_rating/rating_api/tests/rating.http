@@ -1,0 +1,21 @@
+@url=http://localhost:3000
+
+### Create review
+POST {{url}}/reviews
+Content-Type: application/json
+
+{
+    "productId": 1,
+    "userEmail": "adminrica@gmail.com",
+    "description": "Produto top é top mesmo.",
+    "rating": 5
+}
+
+### Get all ratings for a given product
+GET {{url}}/reviews/1
+
+### Get rating by ID
+GET {{url}}/reviews/1
+
+### Mean product rating
+GET {{url}}/reviews/mean

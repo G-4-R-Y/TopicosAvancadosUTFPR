@@ -1,5 +1,5 @@
-@url=http://localhost:3000
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTUxNTQ1OSwiZXhwIjoxNjM5NjAxODU5fQ.Cvo6RpYUyHkz6dy1tFAD3CgVWmtDbMLSsFI7Hysr2Bc
+@url=http://localhost:3002
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTU4MDY0MCwiZXhwIjoxNjM5NjY3MDQwfQ.XwPfmAVdz07hM9T_cCvDTUKM6Jo8FEIMhoM_uoiP3sk
 
 @token_user=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJyaWNhQGdtYWlsLmNvbSIsInVzZXJUeXBlIjoiTm9ybWFsIiwiaWF0IjoxNjM5NDg3NjM1LCJleHAiOjE2Mzk1NzQwMzV9.cIbmljXrGPsvzVoQCcfSQ_Nh9iDMvvtTvtJrqL0t9pc
 
@@ -26,5 +26,5 @@ GET {{url}}/products/2
 Authorization: {{token}}
 
 ### Delete product (by Id)
-DELETE {{url}}/products/7
+DELETE {{url}}/products/2
 Authorization: {{token}}

@@ -1,5 +1,5 @@
-@url=http://localhost:3000
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTUwODk4NCwiZXhwIjoxNjM5NTk1Mzg0fQ.Sdy2iKpnsFqxumgixJ0MEZTJhAn_yjlprRfLjOfOCXI
+@url=http://localhost:3002
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTU4MDY0MCwiZXhwIjoxNjM5NjY3MDQwfQ.XwPfmAVdz07hM9T_cCvDTUKM6Jo8FEIMhoM_uoiP3sk
 
 ### Create user
 POST {{url}}/users

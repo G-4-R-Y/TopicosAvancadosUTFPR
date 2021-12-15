@@ -1,11 +1,11 @@
-@url=http://localhost:3000
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTUxNTQ1OSwiZXhwIjoxNjM5NjAxODU5fQ.Cvo6RpYUyHkz6dy1tFAD3CgVWmtDbMLSsFI7Hysr2Bc
+@url=http://localhost:3002
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbnJpY2FAZ21haWwuY29tIiwidXNlclR5cGUiOiJBZG1pbiIsImlhdCI6MTYzOTU4MjE2NSwiZXhwIjoxNjM5NjY4NTY1fQ.nLVphuMKnRs4pF1ClCD5Ll-twLtbk_N8-U4WzWEE4F8
 @token_user=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJyaWNhQGdtYWlsLmNvbSIsInVzZXJUeXBlIjoiTm9ybWFsIiwiaWF0IjoxNjM5NDg3NjM1LCJleHAiOjE2Mzk1NzQwMzV9.cIbmljXrGPsvzVoQCcfSQ_Nh9iDMvvtTvtJrqL0t9pc
 
 ### Create order
 POST {{url}}/orders
 Content-Type: application/json
-Authorization: {{token_user}}
+Authorization: {{token}}
 
 {
     "products":
@@ -20,9 +20,17 @@ GET {{url}}/orders
 Authorization: {{token}}
 
 ### Get order by ID
-GET {{url}}/orders/3
+GET {{url}}/orders/4
+Authorization: {{token}}
+
+### Get orders by user ID
+GET {{url}}/orders/user/1
+Authorization: {{token}}
+
+### Get order products by order ID
+GET {{url}}/orders/productslist/4
 Authorization: {{token}}
 
 ### Delete order (by Id)
-DELETE {{url}}/orders/3
+DELETE {{url}}/orders/4
 Authorization: {{token}}
