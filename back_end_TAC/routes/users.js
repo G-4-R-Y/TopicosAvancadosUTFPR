@@ -1,4 +1,5 @@
 var express = require('express');
+const cors = require('cors');
 var router = express.Router();
 
 const { User } = require('../database/models')
@@ -6,19 +7,19 @@ const { User } = require('../database/models')
 const isAuthorized = require('../middlewares/isAuthorized')
 
 /* GET users listing. */
-router.get('/',  isAuthorized, async function(req, res, next) {
+router.get('/', cors(), isAuthorized, async function(req, res, next) {
   res.json(await User.findAll());
 });
 
 //Get user by ID
-router.get("/:id", isAuthorized, async (req, res) => {
+router.get("/:id", cors(), isAuthorized, async (req, res) => {
   const{ id } = req.params;
 
   return res.json(await User.findByPk(id));
 });
 
 // Register an user
-router.post('/', async (req, res) => {
+router.post('/', cors(), async (req, res) => {
   const userJson = req.body;
 
   try {
@@ -32,7 +33,7 @@ router.post('/', async (req, res) => {
 });
 
 // Update user
-router.put("/:id", isAuthorized, async (req, res) => {
+router.put("/:id", cors(), isAuthorized, async (req, res) => {
   const { name, email, login, password } = req.body;
   const { id } = req.params;
 
@@ -49,7 +50,7 @@ router.put("/:id", isAuthorized, async (req, res) => {
 });
 
 // Delete user
-router.delete('/:id', isAuthorized, async (req, res) => {
+router.delete('/:id', cors(), isAuthorized, async (req, res) => {
   const { id } = req.params;
 
   //if (req.userId != id) return res.status(403).json({ message: 'Sem permissão para deletar o usuário.' });
