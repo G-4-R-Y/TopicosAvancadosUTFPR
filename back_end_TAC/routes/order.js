@@ -8,26 +8,26 @@ const { Order, Prod, ProdOrder } = require('../database/models');
 const isAuthorized = require('../middlewares/isAuthorized')
 
 /* GET order listing. */
-router.get('/', cors(), isAuthorized, async function(req, res, next) {
+router.get('/', isAuthorized, async function(req, res, next) {
     res.json(await Order.findAll());
 });
 
 /* GET all user orders */
-router.get("/:id/products", cors(), isAuthorized, async (req, res) => {
+router.get("/:id/products", isAuthorized, async (req, res) => {
   const { id } = req.params;
   const { userId } = req.user;
   const { Order } = await Order.findAll({where: userId == Order.userId});
 });
 
 //Get order by ID
-router.get("/:id",  cors(), isAuthorized, async (req, res) => {
+router.get("/:id",  isAuthorized, async (req, res) => {
   const{ id } = req.params;
   console.log(id);
   return res.json(await Order.findByPk(id));
 });
 
 // CREATE order
-router.post('/', cors(), isAuthorized, async (req, res) => {
+router.post('/', isAuthorized, async (req, res) => {
   const { products } = req.body;
   const { id } = req.user;
   console.log(id);
@@ -65,7 +65,7 @@ router.post('/', cors(), isAuthorized, async (req, res) => {
 });
 
 // Update order
-router.put("/:id", cors(), isAuthorized, async (req, res) => {
+router.put("/:id", isAuthorized, async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -81,7 +81,7 @@ router.put("/:id", cors(), isAuthorized, async (req, res) => {
 });
 
 // Delete order
-router.delete('/:id', cors(), isAuthorized, async (req, res) => {
+router.delete('/:id', isAuthorized, async (req, res) => {
   const { id } = req.params;
 
   //if (req.userId != id) return res.status(403).json({ message: 'Sem permissão para deletar o usuário.' });
