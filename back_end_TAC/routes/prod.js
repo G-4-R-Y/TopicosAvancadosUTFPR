@@ -3,7 +3,6 @@ const cors = require('cors');
 var router = express.Router();
 const corsAllow = require('../middlewares/corsAllow');
 const { Prod } = require('../database/models')
-
 const isAuthorized = require('../middlewares/isAuthorized')
 const isAdministrator = require('../middlewares/isAdministrator')
 
