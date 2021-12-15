@@ -13,7 +13,7 @@ router.get('/', corsAllow, async function(req, res, next) {
 });
 
 //Get product by ID
-router.get("/:id", corsAllow, isAuthorized, async (req, res) => {
+router.get("/:id", corsAllow, async (req, res) => {
   const{ id } = req.params;
 
   return res.json(await Prod.findByPk(id));
