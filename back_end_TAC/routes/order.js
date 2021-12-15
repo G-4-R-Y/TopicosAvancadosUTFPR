@@ -1,7 +1,7 @@
 var express = require('express');
 const cors = require('cors');
 var router = express.Router();
-const { corsAllow } = require('../middlewares');
+const corsAllow = require('../middlewares/corsAllow');
 const { Order, Prod, ProdOrder } = require('../database/models');
 //const order = require('../database/models/order');
 

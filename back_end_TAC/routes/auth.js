@@ -1,7 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
-const { corsAllow } = require('../middlewares');
+const corsAllow = require('../middlewares/corsAllow');
 const { User } = require('../database/models')
 
 const EXPIRES = 86400;
