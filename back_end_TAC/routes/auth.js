@@ -1,7 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
-const cors = require('cors');
+const { corsAllow } = require('../middlewares');
 const { User } = require('../database/models')
 
 const EXPIRES = 86400;
@@ -15,7 +15,7 @@ function generateToken(params = {}, timeout = EXPIRES) {
 }
 
 // Rota para autenticar o usuário
-router.post('/', cors(), async (req, res) => {
+router.post('/', corsAllow, async (req, res) => {
   const { 'token-timeout': timeout = EXPIRES } = req.headers;
 
   const { email, password } = req.body;

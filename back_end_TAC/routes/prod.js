@@ -1,26 +1,26 @@
 var express = require('express');
 const cors = require('cors');
 var router = express.Router();
-
+const { corsAllow } = require('../middlewares');
 const { Prod } = require('../database/models')
 
 const isAuthorized = require('../middlewares/isAuthorized')
 const isAdministrator = require('../middlewares/isAdministrator')
 
 /* GET products listing. */
-router.get('/', async function(req, res, next) {
+router.get('/', corsAllow, async function(req, res, next) {
     res.json(await Prod.findAll());
 });
 
 //Get product by ID
-router.get("/:id", isAuthorized, async (req, res) => {
+router.get("/:id", corsAllow, isAuthorized, async (req, res) => {
   const{ id } = req.params;
 
   return res.json(await Prod.findByPk(id));
 });
 
 // Register a product
-router.post('/', isAuthorized, isAdministrator, async (req, res) => {
+router.post('/', corsAllow, isAuthorized, isAdministrator, async (req, res) => {
   const prodJson = req.body;
 
   try {
@@ -34,7 +34,7 @@ router.post('/', isAuthorized, isAdministrator, async (req, res) => {
 });
 
 // Update product
-router.put("/:id", isAuthorized, async (req, res) => {
+router.put("/:id", corsAllow, isAuthorized, async (req, res) => {
   const { name, price, quantity, description, category, image } = req.body;
   const { id } = req.params;
 
@@ -51,7 +51,7 @@ router.put("/:id", isAuthorized, async (req, res) => {
 });
 
 // Delete product
-router.delete('/:id', isAuthorized, async (req, res) => {
+router.delete('/:id', corsAllow, isAuthorized, async (req, res) => {
   const { id } = req.params;
   
   const result = await Prod.destroy({ where: {id: id}}).then(count => {
